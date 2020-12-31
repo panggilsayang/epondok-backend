@@ -13,6 +13,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
+        "laravel/passport": "^10.1",
         "laravel/tinker": "^2.5"
     },
     "require-dev": {
@@ -21,12 +22,16 @@
         "laravel/sail": "^0.0.5",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "phpunit/phpunit": "^9.3.3",
+        "rector/rector": "^0.8.56"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.12"
+        }
     },
     "extra": {
         "laravel": {
@@ -57,6 +62,12 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "analyze": [
+            "vendor/bin/phpstan analyze"
+        ],
+        "refactor": [
+            "vendor/bin/rector process --dry-run"
         ]
     }
 }
