@@ -14,7 +14,15 @@ declare(strict_types=1);
 
 return PhpCsFixer\Config::create()
     ->setRules((new PhpCsFixerLaravel())->getFixers())
-    ->setFinder(PhpCsFixer\Finder::create()->in(__DIR__ . '/app'))
+    ->setFinder(PhpCsFixer\Finder::create()->in([
+        __DIR__ . '/app',
+        __DIR__ . '/routes',
+        __DIR__ . '/config',
+        __DIR__ . '/database',
+        __DIR__ . '/resources',
+        __DIR__ . '/routes',
+        __DIR__ . '/tests',
+    ]))
     ->setRiskyAllowed(true)
 ;
 
@@ -76,7 +84,7 @@ final class PhpCsFixerLaravel
         'phpdoc_inline_tag_normalizer' => null,
         'phpdoc_singular_inheritdoc' => null,
         'clean_namespace' => null,
-        'psr12_braces' => null,
+        'psr12_braces' => 'braces',
     ];
 
     /**

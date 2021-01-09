@@ -12,7 +12,8 @@ class SuccessJsonResponse implements Responsable
     protected array $data = [];
     protected string $message = '';
 
-    public function __construct(array $data, string $message = 'Success') {
+    public function __construct(array $data, string $message = 'Success')
+    {
         $this->data = $data;
         $this->message = $message;
     }

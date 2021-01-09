@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
 
     /*
@@ -122,5 +124,5 @@ return [
     | Here you may define token name for passport token
     |
     */
-    'passport_token_name' => env('OAUTH_TOKEN_NAME','default'),
+    'passport_token_name' => env('OAUTH_TOKEN_NAME', 'default'),
 ];

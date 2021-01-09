@@ -16,7 +16,8 @@ class LoginController extends Controller
      */
     protected $loginService;
 
-    public function __construct(LoginService $loginService) {
+    public function __construct(LoginService $loginService)
+    {
         $this->loginService = $loginService;
     }
 

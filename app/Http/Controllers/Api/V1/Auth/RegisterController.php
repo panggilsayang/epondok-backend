@@ -16,7 +16,8 @@ class RegisterController extends Controller
      */
     protected $registerService;
 
-    public function __construct(RegisterService $registerService) {
+    public function __construct(RegisterService $registerService)
+    {
         $this->registerService = $registerService;
     }
 
