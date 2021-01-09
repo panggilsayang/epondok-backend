@@ -2,20 +2,29 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
+use Laravel\Passport\Token;
 
 /**
+ * @property int $id
  * @property string $name
  * @property string $email
  * @property string $password
+ * @property string $remember_token
+ * @property Carbon $created_at
+ * @property Carbon $deleted_at
+ * @property Carbon $email_verified_at
+ * @property Token $token
  */
 class User extends Authenticatable
 {
     use HasFactory;
     use Notifiable;
-
+    use HasApiTokens;
     /**
      * The attributes that are mass assignable.
      *

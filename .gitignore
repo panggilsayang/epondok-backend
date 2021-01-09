@@ -11,3 +11,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.php_cs_laravel_upgrade.cache
+.php_cs_laravel.cache
+.php_cs.cache

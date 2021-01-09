@@ -42,9 +42,9 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
-            'hash' => false,
+            // 'hash' => false,
         ],
     ],
 
@@ -114,4 +114,13 @@ return [
 
     'password_timeout' => 10800,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Oauth Token Name
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define token name for passport token
+    |
+    */
+    'passport_token_name' => env('OAUTH_TOKEN_NAME','default'),
 ];
