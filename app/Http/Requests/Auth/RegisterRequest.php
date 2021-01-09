@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 namespace App\Http\Requests\Auth;
 
 use App\Traits\Common\RequestTrait;
@@ -8,6 +10,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class RegisterRequest extends FormRequest
 {
     use RequestTrait;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -23,7 +26,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'email' => ['required'],
-            'password' => ['required','string','min:8'],
+            'password' => ['required', 'string', 'min:8'],
         ];
     }
 }

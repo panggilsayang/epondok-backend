@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Exceptions;
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
@@ -40,15 +41,15 @@ class Handler extends ExceptionHandler
                 'code' => 0,
                 'message' => 'Data not found',
                 'trace' => $notFoundHttpException->getMessage(),
-                'prev' => $notFoundHttpException->getTraceAsString()
-            ],Response::HTTP_NOT_FOUND);
+                'prev' => $notFoundHttpException->getTraceAsString(),
+            ], Response::HTTP_NOT_FOUND);
         });
         $this->renderable(function (BaseServiceException $baseServiceException) {
             return new JsonResponse([
                 'status' => false,
                 'code' => 0,
                 'message' => $baseServiceException->getMessage(),
-            ],Response::HTTP_INTERNAL_SERVER_ERROR);            
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
         });
     }
 }
